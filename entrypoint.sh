@@ -3,7 +3,7 @@ set -e
 # Set the install command to be used by mk-build-deps (use --yes for non-interactive)
 install_tool="apt-get -o Debug::pkgProblemResolver=yes --no-install-recommends --yes"
 # Install build dependencies automatically
-mk-build-deps --install --tool="${install_tool}" debian/control
+mk-build-deps --install --tool="${install_tool}" --remove debian/control
 # Build the package
 gbp buildpackage
 # Output the filename
