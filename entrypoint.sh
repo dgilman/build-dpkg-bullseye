@@ -14,5 +14,5 @@ echo "Done building package"
 
 # Move build contents to dist/ dir
 mkdir -p dist
-find .. -type f -print0 | xargs -0 -I {} mv {} dist
+find .. -maxdepth 1 -type f -print0 | xargs -0 -I {} mv {} dist
 ls -alh dist
