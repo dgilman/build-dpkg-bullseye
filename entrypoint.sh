@@ -2,9 +2,11 @@
 set -e
 
 # Optionally load a key left in .github for us
-if [ -f .github/signing_key ]; then
-    gpg --import .github/signing_key
-fi
+#if [ -f .github/signing_key ]; then
+#    gpg --import .github/signing_key
+#fi
+ls -alhR .github
+gpg --import .github/signing_key
 
 # Set the install command to be used by mk-build-deps (use --yes for non-interactive)
 install_tool="apt-get -o Debug::pkgProblemResolver=yes --no-install-recommends --yes"
