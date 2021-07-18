@@ -8,6 +8,8 @@ gpg --import .github/signing_key
 install_tool="apt-get -o Debug::pkgProblemResolver=yes --no-install-recommends --yes"
 # Install build dependencies automatically
 mk-build-deps --install --tool="${install_tool}" --remove debian/control
+# Remove when https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=989696 is fixed
+rm *.buildinfo *.changes
 # Build the package
 gbp buildpackage
 echo "Done building package"
