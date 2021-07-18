@@ -11,7 +11,7 @@ mk-build-deps --install --tool="${install_tool}" --remove debian/control
 # Remove when https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=989696 is fixed
 rm *.buildinfo *.changes
 # Build the package
-gbp buildpackage
+gbp buildpackage --git-ignore-branch
 echo "Done building package"
 
 # Move build contents to dist/ dir
