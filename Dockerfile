@@ -1,4 +1,4 @@
-FROM debian:buster
+FROM debian:bullseye
 LABEL maintainer="David Gilman <davidgilman1@gmail.com>"
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
